@@ -1,0 +1,1 @@
+export {default as FooterFragment} from "./FooterFragment"
