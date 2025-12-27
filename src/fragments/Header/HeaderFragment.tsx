@@ -1,6 +1,6 @@
 import {type FunctionComponent, useState} from "react";
 import {NavLink} from "react-router-dom";
-import {ROUTES} from "../imports.ts";
+import {ROUTES, SOCIAL_NETWORK_LINKS} from "../imports.ts";
 
 /**
  * Fragment Header
@@ -44,16 +44,16 @@ const HeaderFragment: FunctionComponent = () => {
                 </nav>
 
                 <div className="header-social-links">
-                    <a href="https://www.youtube.com/channel/UCmuaNww-ax2Dlm7HPmf76mw?sub_confirmation=1"
-                       target="_blank"
-                    >
+                    <a href={SOCIAL_NETWORK_LINKS.YOUTUBE} target="_blank">
                         <i className="bi bi-youtube"></i>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/elisée-mihan-15a7b3327"
-                       target="_blank"
-                    >
+                    <a href={SOCIAL_NETWORK_LINKS.LINKEDIN} target="_blank">
                         <i className="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href={SOCIAL_NETWORK_LINKS.GITHUB} target="_blank">
+                        <i className="bi bi-github"></i>
                     </a>
                 </div>
 

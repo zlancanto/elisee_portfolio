@@ -1,132 +1,119 @@
 import type {FunctionComponent} from "react";
+import AchievementComponent from "./AchievementComponent.tsx";
 
 const Achievements: FunctionComponent = () => {
     return (
         <section id="services" className="services section">
-
             <div className="container section-title" data-aos="fade-up">
-                <h2>Services</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut
-                    perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem
-                    aperiam</p>
+                <h2>Réalisations</h2>
+                <p>
+                    Découvrez une sélection de mes projets,
+                    où chaque ligne de code est pensée pour répondre à un besoin métier précis
+                    et offrir une expérience utilisateur optimale.
+                </p>
             </div>
 
             <div className="container" data-aos="fade-up" data-aos-delay="100">
-
                 <div className="row justify-content-center g-5">
-
-                    <div className="col-md-6" data-aos="fade-right" data-aos-delay="100">
-                        <div className="service-item">
-                            <div className="service-icon">
-                                <i className="bi bi-code-slash"></i>
-                            </div>
-                            <div className="service-content">
-                                <h3>Custom Web Development</h3>
-                                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut
-                                    libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis. Lorem
-                                    ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <a href="service-details.html" className="service-link">
-                                    <span>Learn More</span>
-                                    <i className="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div className="col-md-6" data-aos="fade-left" data-aos-delay="120">
+                        <AchievementComponent
+                            title={"Editeur de text"}
+                            description={
+                                "« Editeur de texte en environnement console, " +
+                                "rigoureusement développé sous Java 17. L'intérêt majeur " +
+                                "de ce projet réside dans une architecture logicielle sophistiquée, " +
+                                "articulée autour de l'implémentation stricte des design patterns " +
+                                "Command, Memento, Prototype et Factory. " +
+                                "Ce projet témoigne d'une maîtrise approfondie des principes " +
+                                "de conception orientée objet et de la structuration de code modulaire" +
+                                " et évolutif. »"
+                            }
+                            link={"https://github.com/zlancanto/aco-tp"}
+                            icon={"bi bi-type"}
+                        />
                     </div>
 
-                    <div className="col-md-6" data-aos="fade-left" data-aos-delay="100">
-                        <div className="service-item">
-                            <div className="service-icon">
-                                <i className="bi bi-phone-fill"></i>
-                            </div>
-                            <div className="service-content">
-                                <h3>Mobile App Solutions</h3>
-                                <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna
-                                    justo, lacinia eget consectetur sed. Quisque velit nisi, pretium ut lacinia in,
-                                    elementum id enim. Donec rutrum congue leo eget malesuada.</p>
-                                <a href="service-details.html" className="service-link">
-                                    <span>Learn More</span>
-                                    <i className="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div className="col-md-6" data-aos="fade-right" data-aos-delay="180">
+                        <AchievementComponent
+                            title={"Simultaion d'une gare de train"}
+                            description={
+                                "« Conception et développement d'une infrastructure " +
+                                "de simulation ferroviaire multithreadée visant à résoudre " +
+                                "des problématiques critiques de synchronisation et " +
+                                "de concurrence de données. Ce projet articule " +
+                                "une modélisation rigoureuse d'objets partagés — " +
+                                "tels que la gestion des flux de voyageurs et l'allocation " +
+                                "des infrastructures de quai — avec le déploiement " +
+                                "d'une architecture de contrôle pilotée par une API REST (Restlet). " +
+                                "Cette réalisation démontre une maîtrise avancée " +
+                                "de la programmation asynchrone, de la gestion du cycle de vie " +
+                                "des processus (Threads) et de l'interopérabilité " +
+                                "des systèmes via des services web. »"
+                            }
+                            link={"https://github.com/zlancanto/Simu_Gare_Train"}
+                            icon={"bi bi-train-lightrail-front-fill"}
+                        />
                     </div>
 
-                    <div className="col-md-6" data-aos="fade-right" data-aos-delay="200">
-                        <div className="service-item">
-                            <div className="service-icon">
-                                <i className="bi bi-palette2"></i>
-                            </div>
-                            <div className="service-content">
-                                <h3>UI/UX Design</h3>
-                                <p>Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Vivamus
-                                    suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam
-                                    vehicula elementum sed sit amet dui.</p>
-                                <a href="service-details.html" className="service-link">
-                                    <span>Learn More</span>
-                                    <i className="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-md-6" data-aos="fade-left" data-aos-delay="200">
-                        <div className="service-item">
-                            <div className="service-icon">
-                                <i className="bi bi-bar-chart-line"></i>
-                            </div>
-                            <div className="service-content">
-                                <h3>Digital Marketing</h3>
-                                <p>Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt
-                                    nibh pulvinar a. Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui
-                                    posuere blandit.</p>
-                                <a href="service-details.html" className="service-link">
-                                    <span>Learn More</span>
-                                    <i className="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div className="col-md-6" data-aos="fade-left" data-aos-delay="240">
+                        <AchievementComponent
+                            title={"Mon Portfolio"}
+                            description={
+                                "« Conception et développement d'une plateforme vitrine moderne" +
+                                " en appliquant les principes SOLID pour un code maintenable " +
+                                "et évolutif. Le backend est propulsé par Spring Boot, assurant" +
+                                " une gestion robuste des données, tandis que le frontend" +
+                                " sous React offre une interface fluide et réactive. »"
+                            }
+                            link={"https://github.com/zlancanto/elisee_portfolio"}
+                            icon={"bi bi-braces"}
+                        />
                     </div>
 
                     <div className="col-md-6" data-aos="fade-right" data-aos-delay="300">
-                        <div className="service-item">
-                            <div className="service-icon">
-                                <i className="bi bi-cloud-check"></i>
-                            </div>
-                            <div className="service-content">
-                                <h3>Cloud Computing</h3>
-                                <p>Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh. Vivamus
-                                    magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ut
-                                    libero malesuada feugiat.</p>
-                                <a href="service-details.html" className="service-link">
-                                    <span>Learn More</span>
-                                    <i className="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
+                        <AchievementComponent
+                            title={"Réseau social «Mymoz»"}
+                            description={
+                                "« Mini réseau social réalisé avec React et Express.js »"
+                            }
+                            link={"https://github.com/zlancanto/ZlancaSocialNetworkFrontend"}
+                            icon={"bi bi-globe"}
+                        />
                     </div>
 
-                    <div className="col-md-6" data-aos="fade-left" data-aos-delay="300">
-                        <div className="service-item">
-                            <div className="service-icon">
-                                <i className="bi bi-shield-lock"></i>
-                            </div>
-                            <div className="service-content">
-                                <h3>Cybersecurity Solutions</h3>
-                                <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec
-                                    sollicitudin molestie malesuada. Curabitur arcu erat, accumsan id imperdiet et.
-                                    Proin eget tortor risus.</p>
-                                <a href="service-details.html" className="service-link">
-                                    <span>Learn More</span>
-                                    <i className="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div className="col-md-6" data-aos="fade-left" data-aos-delay="360">
+                        <AchievementComponent
+                            title={"Réseau social «AdopteUnDev»"}
+                            description={
+                                "« Développé en Symfony, il s'agit " +
+                                "d'une application web permettant aux développeurs " +
+                                "et aux entreprises de créer des profils ou " +
+                                "des fiches de postes et de les faire correspondre " +
+                                "selon un modèle inspiré des sites de rencontres. »"
+                            }
+                            link={"https://github.com/zlancanto/AdopteUnDev"}
+                            icon={"bi bi-code-slash"}
+                        />
+                    </div>
+
+                    <div className="col-md-6" data-aos="fade-right" data-aos-delay="420">
+                        <AchievementComponent
+                            title={"Réseau social «AdopteUnDev»"}
+                            description={
+                                "« Cette application mobile, dédiée à la gestion en temps réel " +
+                                "des horaires du réseau de transport STAR, " +
+                                "constitue une démonstration de maîtrise du développement " +
+                                "Android natif et du traitement de données à grande échelle. " +
+                                "Le système assure de manière autonome le téléchargement, " +
+                                "l'extraction et l'indexation de flux de données GTFS complexes. »"
+                            }
+                            link={"https://github.com/zlancanto/Horaires_Bus_Stars"}
+                            icon={"bi bi-phone-fill"}
+                        />
                     </div>
 
                 </div>
-
             </div>
-
         </section>
     );
 }

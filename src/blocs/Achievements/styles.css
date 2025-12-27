@@ -1,0 +1,23 @@
+.mh-25-v {
+    /* On définit la hauteur maximale */
+    max-height: 25vh;
+
+    /* On gère le débordement vertical */
+    overflow-y: auto;
+
+    /* Optionnel : pour éviter que le texte ne colle au bord du scroll */
+    padding-right: 10px;
+
+    /* Assure que le texte ne dépasse pas sur les côtés */
+    word-wrap: break-word;
+}
+
+/* Optionnel : Personnaliser la barre de défilement pour qu'elle soit plus discrète */
+.mh-25-v::-webkit-scrollbar {
+    width: 5px;
+}
+
+.mh-25-v::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}

@@ -1,148 +1,154 @@
 import type {FunctionComponent} from "react";
+import ExperienceComponent, {default as EducationComponent} from "./ExperienceComponent.tsx";
+import ProgressBarComponent from "./ProgressBarComponent.tsx";
 
 const Parcours: FunctionComponent = () => {
+    const auj = "Auj";
     return (
         <section id="resume" className="resume section">
-
             <div className="container section-title" data-aos="fade-up">
                 <h2>Resume</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut
-                    perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem
-                    aperiam</p>
+                <p className="text-justified">
+                    Étudiant en informatique, passionné par le développement logiciel et les technologies web.
+                    Je conçois des applications modernes en Java, Spring Boot et React, en accordant une attention
+                    particulière à la qualité du code et aux bonnes pratiques. <br/>
+                    Actuellement en Master 1, je suis à la recherche d’opportunités (stage et alternance) pour
+                    approfondir mes compétences et relever de nouveaux défis techniques.
+                </p>
             </div>
 
             <div className="container" data-aos="fade-up" data-aos-delay="100">
-
                 <div className="row">
                     <div className="col-lg-6">
-
                         <div className="resume-item" data-aos="fade-up">
                             <h3 className="resume-title">Education</h3>
 
                             <div className="resume-content">
-                                <article className="education-item">
-                                    <h4>Master of Computer Science</h4>
-                                    <h5>2019 - 2021</h5>
-                                    <p className="institution"><em>Stanford University, California</em></p>
-                                    <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit.
-                                        Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
-                                </article>
+                                <EducationComponent
+                                    title={"Master 1 MIAGE"}
+                                    start={"2025"}
+                                    end={auj}
+                                    company={"Université de Rennes"}
+                                    location={"France"}
+                                    descriptions={[
+                                        "Approfondissement du développement logiciel en Java et Spring Boot à travers les design patterns, l’automatisation des tests et les bonnes pratiques de génie logiciel",
+                                        "Étude de la modélisation UML, de la programmation concurrente (threads Java) et des systèmes d’information, avec une ouverture sur des notions de gestion d’entreprise telles que le contrôle de gestion et la gestion de production"
+                                    ]}
+                                />
 
-                                <article className="education-item">
-                                    <h4>Bachelor of Computer Science</h4>
-                                    <h5>2015 - 2019</h5>
-                                    <p className="institution"><em>Massachusetts Institute of Technology</em></p>
-                                    <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis
-                                        delectus nihil temporibus sapiente</p>
-                                </article>
-                            </div>
-                        </div>
+                                <EducationComponent
+                                    title={"Licence 3 MIAGE"}
+                                    start={"2024"}
+                                    end={"2025"}
+                                    company={"Université de Rennes"}
+                                    location={"France"}
+                                    descriptions={[
+                                        "Acquisition des fondamentaux de l’informatique et l’algorithmique avancée",
+                                        "Étude approfondie des algorithmes sur les graphes (plus court/long chemin, flots, arbres couvrants, programmation dynamique) avec une attention particulière portée à la complexité et à l’optimisation des performances",
+                                        "Acquisition de compétences en probabilités, statistiques inférentielles, bases de données relationnelles, programmation web avec Symfony, modélisation objet UML, ainsi qu’en gestion et comptabilité financière"
+                                    ]}
+                                />
 
-                        <div className="resume-item skills-animation" data-aos="fade-up">
-                            <h3 className="resume-title">Professional Skills</h3>
+                                <EducationComponent
+                                    title={"Licence Informatique"}
+                                    start={"2020"}
+                                    end={"2023"}
+                                    company={"Institut National Polytechnique Felix Houphouët Boigny (INP-HB)"}
+                                    location={"Côte d'Ivoire"}
+                                    descriptions={[
+                                        "Acquisition des fondamentaux en programmation algorithmique",
+                                        "Etude approfondie de la programmation procédurale avec le langage C",
+                                        "Étude approfondie la programmation orientée objet avec des langages comme C++ et Java",
+                                        "Acquisition de compétences en conception et modélisation objet avec MERISE et UML."
+                                    ]}
+                                />
 
-                            <div className="resume-content">
-                                <div className="skill-item">
-                                    <h4>Frontend Development</h4>
-                                    <div className="progress">
-                                        <div className="progress-bar" role="progressbar" aria-valuenow={95}
-                                             aria-valuemin={0} aria-valuemax={100}></div>
-                                    </div>
-                                </div>
-
-                                <div className="skill-item">
-                                    <h4>Backend Development</h4>
-                                    <div className="progress">
-                                        <div className="progress-bar" role="progressbar" aria-valuenow={85}
-                                             aria-valuemin={0} aria-valuemax={100}></div>
-                                    </div>
-                                </div>
-
-                                <div className="skill-item">
-                                    <h4>UI/UX Design</h4>
-                                    <div className="progress">
-                                        <div className="progress-bar" role="progressbar" aria-valuenow={90}
-                                             aria-valuemin={0} aria-valuemax={100}></div>
-                                    </div>
-                                </div>
-
-                                <div className="skill-item">
-                                    <h4>Project Management</h4>
-                                    <div className="progress">
-                                        <div className="progress-bar" role="progressbar" aria-valuenow={80}
-                                             aria-valuemin={0} aria-valuemax={100}></div>
-                                    </div>
-                                </div>
+                                <EducationComponent
+                                    title={"Bac scientifique"}
+                                    start={"2019"}
+                                    end={"2020"}
+                                    company={"Lycée Moderne Anyama"}
+                                    location={"Côte d'Ivoire"}
+                                    descriptions={[
+                                        "Acquisition de compétences solides en Math, Physique et Chimie",
+                                        "Apprentissage approfondi en expressions écrites et orales avec des matières comme le Français et la Philosophie",
+                                    ]}
+                                />
                             </div>
                         </div>
                     </div>
 
                     <div className="col-lg-6">
                         <div className="resume-item" data-aos="fade-up" data-aos-delay={100}>
-                            <h3 className="resume-title">Professional Experience</h3>
+                            <h3 className="resume-title">Expériences Professionnelles</h3>
 
                             <div className="resume-content">
-                                <article className="experience-item">
-                                    <h4>Senior Software Engineer</h4>
-                                    <h5>2021 - Present</h5>
-                                    <p className="company"><em>Google, Mountain View, CA</em></p>
-                                    <ul>
-                                        <li>Lead in the development, implementation, and optimization of web
-                                            applications using modern technologies
-                                        </li>
-                                        <li>Delegate tasks to the 7 members of the development team and provide counsel
-                                            on all aspects of the project
-                                        </li>
-                                        <li>Supervise the assessment of all web applications, mobile apps, and software
-                                            platforms for quality and efficiency
-                                        </li>
-                                        <li>Oversee the efficient use of production project budgets ranging from $2,000
-                                            - $25,000
-                                        </li>
-                                    </ul>
-                                </article>
 
-                                <article className="experience-item">
-                                    <h4>Software Engineer</h4>
-                                    <h5>2019 - 2021</h5>
-                                    <p className="company"><em>Microsoft, Redmond, WA</em></p>
-                                    <ul>
-                                        <li>Developed numerous marketing programs (logos, brochures, infographics,
-                                            presentations, and advertisements)
-                                        </li>
-                                        <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                                        <li>Recommended and consulted with clients on the most appropriate software
-                                            platforms
-                                        </li>
-                                        <li>Created 4+ design presentations and proposals a month for clients and
-                                            account managers
-                                        </li>
-                                    </ul>
-                                </article>
+                                {/* Les espaces de ligne dans le tableau pour marquer une diff entre ses éléments */}
+                                <ExperienceComponent
+                                    title={"Développeur Frontend"}
+                                    start={"avr"}
+                                    end={"juin 2025"}
+                                    company={"e-Peak People"}
+                                    location={"Ille-de-France"}
+                                    descriptions={[
+                                        "Développement d'une app web de gestion des Ressources Humaines d'une entreprise",
 
-                                <article className="experience-item">
-                                    <h4>Junior Software Developer</h4>
-                                    <h5>2017 - 2019</h5>
-                                    <p className="company"><em>Apple Inc., Cupertino, CA</em></p>
-                                    <ul>
-                                        <li>Implemented responsive websites and web applications using modern JavaScript
-                                            frameworks
-                                        </li>
-                                        <li>Collaborated with senior developers to maintain and optimize existing
-                                            applications
-                                        </li>
-                                        <li>Participated in code reviews and contributed to team documentation efforts
-                                        </li>
-                                        <li>Assisted in the development of RESTful APIs and microservices</li>
-                                    </ul>
-                                </article>
+                                        "API Rest, React, Redux, TypeScript, GitLab",
+
+                                        "J’ai travaillé en collaboration étroite avec le Lead Developer et l’équipe technique. " +
+                                        "Mes missions comprenaient l'établissement de la connexion entre l'API " +
+                                        "et l'app frontend l’intégration de maquettes Figma, " +
+                                        "le développement de composants réutilisables, " +
+                                        "la gestion des états via Redux, ainsi que la participation " +
+                                        "aux revues de code et à l’amélioration continue de l’expérience utilisateur (UX). ",
+
+                                        "Cette expérience m’a permis de consolider mes compétences techniques, " +
+                                        "de renforcer ma rigueur en développement web, " +
+                                        "et de m’impliquer pleinement dans un environnement agile et collaboratif.",
+                                    ]}
+                                />
+
+                                <ExperienceComponent
+                                    title={"Développeur Fullstack"}
+                                    start={"mars 2023"}
+                                    end={"avr 2024"}
+                                    company={"J3A Finance"}
+                                    location={"Côte d'Ivoire"}
+                                    descriptions={[
+                                        "Contribution au développement web d'une app bancaire",
+
+                                        "API Rest, Spring Boot, JSF, GitHub, Jira",
+
+                                        "Mes missions comprenaient notamment, l’intégration d’un système " +
+                                        "de messagerie SMS pour la notification des clients, " +
+                                        "le développement de la fonctionnalité de rechargement " +
+                                        "de compte bancaire via PayPal, la gestion des demandes " +
+                                        "et de l’octroi de produits d’épargne tels que le DAT, " +
+                                        "le PEL ou le Livret A (interfaces, logique métier, validation)",
+
+                                        "Cette expérience m’a permis de développer mon autonomie, " +
+                                        "de renforcer mes capacités en travail d’équipe, " +
+                                        "et de cultiver un respect rigoureux des consignes et des délais.",
+                                    ]}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="resume-item skills-animation" data-aos="fade-up">
+                            <h3 className="resume-title">Compétences</h3>
+
+                            <div className="resume-content">
+                                <ProgressBarComponent title={"Spring Boot"} value={70}/>
+                                <ProgressBarComponent title={"React"} value={70}/>
+                                <ProgressBarComponent title={"API Rest"} value={90}/>
+                                <ProgressBarComponent title={"Java"} value={95}/>
+                                <ProgressBarComponent title={"TypeScript"} value={75}/>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </section>
     );
 }
