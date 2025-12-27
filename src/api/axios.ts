@@ -1,5 +1,5 @@
 import axios, {AxiosError} from "axios";
-import {API_BASE_URL,STATUS_ERROR} from "./globals.variables.ts";
+import {API_BASE_URL} from "./globals.variables.ts";
 
 export const API = axios.create({
     baseURL: API_BASE_URL,
@@ -15,10 +15,7 @@ API.interceptors.response.use(
         let message = "Erreur de connexion au serveur.";
 
         if (error.response) {
-            const status = error.response.status;
-            message = status
-                ? STATUS_ERROR[status]
-                : "Une erreur inconnue est survenue.";
+            message = error.message
         }
         else if (error.code === 'ECONNABORTED') {
             message = "Le délai d'attente est dépassé.";

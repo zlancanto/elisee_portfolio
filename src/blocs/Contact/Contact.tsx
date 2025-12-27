@@ -24,12 +24,13 @@ const Contact: FunctionComponent = () => {
 
     const onSubmit = async (data: ContactFormData) => {
         try {
-            await contactService.sendEmail(data);
-            toast.success(MESSAGE.SUCCESS)
+            const response = await contactService.sendEmail(data);
+            toast.success(response.data.message || MESSAGE.SUCCESS);
             reset();
         }
         catch (error: any) {
-            const errorMsg = error.message || MESSAGE.ERROR;
+            const serverMessage = error.response?.data?.message;
+            const errorMsg = serverMessage || MESSAGE.ERROR;
             toast.error(errorMsg);
         }
     };
