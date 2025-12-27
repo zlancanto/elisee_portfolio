@@ -5,4 +5,5 @@ export const ROUTES = {
     ACHIEVEMENTS: "/achievements",
     ABOUT: "/about",
     CONTACT: "/contact",
+    NOT_FOUND: "*",
 } as const;

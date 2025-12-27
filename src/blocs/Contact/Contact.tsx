@@ -2,13 +2,20 @@ import type {FunctionComponent} from "react";
 import {useForm} from "react-hook-form";
 import {type ContactFormData, contactValidator} from "./contact.validator.ts";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {API} from "./index.ts";
+import {contactService} from "./service.ts";
+import toast, {Toaster} from "react-hot-toast";
 
 const Contact: FunctionComponent = () => {
+
+    const MESSAGE = {
+        SUCCESS: "Message envoyé avec succès !",
+        ERROR: "Une erreur est survenue lors de l'envoi.",
+    } as const;
 
     const {
         register,
         handleSubmit,
+        reset,
         formState: {errors, isSubmitting},
     } = useForm<ContactFormData>({
         resolver: zodResolver(contactValidator),
@@ -17,22 +24,26 @@ const Contact: FunctionComponent = () => {
 
     const onSubmit = async (data: ContactFormData) => {
         try {
-            await API.post("/contact", data);
-            alert("Message envoyé !");
-        } catch (error) {
-            console.error(error);
-            alert("Erreur lors de l’envoi");
+            await contactService.sendEmail(data);
+            toast.success(MESSAGE.SUCCESS)
+            reset();
+        }
+        catch (error: any) {
+            const errorMsg = error.message || MESSAGE.ERROR;
+            toast.error(errorMsg);
         }
     };
 
     return (
         <section id="contact" className="contact section">
+            <Toaster position="top-right" reverseOrder={false}/>
             <div className="container section-title" data-aos="fade-up">
                 <h2>Contact</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut
-                    perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam
-                    rem
-                    aperiam
+                <p>
+                    Vous avez un projet innovant, une opportunité de collaboration
+                    ou simplement une question technique ? N'hésitez pas à me contacter.
+                    Je suis toujours ouvert aux échanges constructifs
+                    et aux nouveaux défis technologiques.
                 </p>
             </div>
 
@@ -41,9 +52,10 @@ const Contact: FunctionComponent = () => {
                     <div className="col-lg-5">
                         <div className="info-box" data-aos="fade-up" data-aos-delay="200">
                             <h3>Contact Info</h3>
-                            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum
-                                ante
-                                ipsum primis.
+                            <p>
+                                Basé à Rennes, je suis disponible pour des échanges en présentiel
+                                ou à distance. Vous trouverez ci-dessous mes coordonnées professionnelles
+                                ainsi qu'un formulaire pour m'envoyer un message directement.
                             </p>
 
                             <div className="info-item" data-aos="fade-up" data-aos-delay="300">
@@ -84,51 +96,61 @@ const Contact: FunctionComponent = () => {
                         <div className="contact-form" data-aos="fade-up" data-aos-delay="300">
                             <h3>Me contacter</h3>
 
-                            <form /*onSubmit={}*/
-                                className="php-email-form"
-                                data-aos="fade-up"
-                                data-aos-delay="200"
+                            <form onSubmit={handleSubmit(onSubmit)}
+                                  className="php-email-form"
+                                  data-aos="fade-up"
+                                  data-aos-delay="200"
                             >
                                 <div className="row gy-4">
                                     <div className="col-md-6">
                                         <input {...register("name")}
-                                               className="form-control"
+                                               className={`form-control ${errors.name ? 'is-invalid' : ''}`}
                                                placeholder="Nom complet"
                                         />
-                                        {errors.name && <p>{errors.name.message}</p>}
+                                        {
+                                            errors.name &&
+                                            <div className="invalid-feedback d-block">{errors.name.message}</div>
+                                        }
                                     </div>
 
                                     <div className="col-md-6 ">
                                         <input {...register("email")}
-                                               className="form-control"
+                                               className={`form-control ${errors.message ? 'is-invalid' : ''}`}
                                                placeholder="Email"
                                         />
-                                        {errors.email && <p>{errors.email.message}</p>}
+                                        {
+                                            errors.email &&
+                                            <div className="invalid-feedback d-block">{errors.email.message}</div>
+                                        }
                                     </div>
 
                                     <div className="col-12">
                                         <input {...register("subject")}
-                                               className="form-control"
+                                               className={`form-control ${errors.subject ? 'is-invalid' : ''}`}
                                                placeholder="Sujet"
                                         />
-                                        {errors.subject && <p>{errors.subject.message}</p>}
+                                        {
+                                            errors.subject &&
+                                            <div className="invalid-feedback d-block">{errors.subject.message}</div>
+                                        }
                                     </div>
 
                                     <div className="col-12">
                                         <textarea {...register("message")}
-                                                  className="form-control"
+                                                  className={`form-control ${errors.message ? 'is-invalid' : ''}`}
                                                   rows={6}
                                                   placeholder="Message"
                                         />
-                                        {errors.message && <p>{errors.message.message}</p>}
+                                        {
+                                            errors.message &&
+                                            <div className="invalid-feedback d-block">{errors.message.message}</div>
+                                        }
                                     </div>
 
                                     <div className="col-12 text-center">
-                                        <div className="loading">Loading</div>
-                                        <div className="error-message"></div>
-                                        <div className="sent-message">Votre message a été envoyé. Merci !</div>
-
-                                        <button disabled={isSubmitting} className="btn">Envoyer</button>
+                                        <button type="submit" disabled={isSubmitting} className="btn">
+                                            {isSubmitting ? "Envoi en cours..." : "Envoyer"}
+                                        </button>
                                     </div>
                                 </div>
                             </form>

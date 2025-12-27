@@ -7,13 +7,11 @@ const Parcours: FunctionComponent = () => {
     return (
         <section id="resume" className="resume section">
             <div className="container section-title" data-aos="fade-up">
-                <h2>Resume</h2>
+                <h2>Parcours</h2>
                 <p className="text-justified">
-                    Étudiant en informatique, passionné par le développement logiciel et les technologies web.
+                    Passionné par le développement logiciel et les technologies web.
                     Je conçois des applications modernes en Java, Spring Boot et React, en accordant une attention
-                    particulière à la qualité du code et aux bonnes pratiques. <br/>
-                    Actuellement en Master 1, je suis à la recherche d’opportunités (stage et alternance) pour
-                    approfondir mes compétences et relever de nouveaux défis techniques.
+                    particulière à la qualité du code et aux bonnes pratiques.
                 </p>
             </div>
 

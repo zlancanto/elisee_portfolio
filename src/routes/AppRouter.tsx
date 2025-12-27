@@ -1,7 +1,7 @@
 import type {FunctionComponent} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {ROUTES} from "./paths.ts";
-import {About, Achievements, Contact, FooterFragment, HeaderFragment, Home, Parcours, Skills} from "./imports.ts";
+import {About, Achievements, Contact, FooterFragment, HeaderFragment, Home, Parcours, Skills, NotFound} from "./imports.ts";
 
 const AppRouter: FunctionComponent = () => {
     return (
@@ -15,6 +15,7 @@ const AppRouter: FunctionComponent = () => {
                     <Route path={ROUTES.ACHIEVEMENTS} element={<Achievements/>}/>
                     <Route path={ROUTES.ABOUT} element={<About/>}/>
                     <Route path={ROUTES.CONTACT} element={<Contact/>}/>
+                    <Route path={ROUTES.NOT_FOUND} element={<NotFound/>}/>
                 </Routes>
             </main>
             <FooterFragment/>

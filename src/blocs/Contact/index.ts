@@ -1,2 +1,2 @@
 export {default as Contact} from "./Contact";
-export {API} from "../imports"
+export {API, ROUTES_API} from "../imports"
