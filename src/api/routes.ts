@@ -1,3 +1,3 @@
 export const ROUTES_API = {
-    CONTACT: "/contact"
+    CONTACT: "/api/contact"
 } as const;
