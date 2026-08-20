@@ -19,7 +19,7 @@ const HeaderFragment: FunctionComponent = () => {
                 <nav id="navmenu" className="navmenu">
                     <ul>
                         <li>
-                            <NavLink to={ROUTES.HOME} onClick={closeMenu}>Home</NavLink>
+                            <NavLink to={ROUTES.HOME} onClick={closeMenu}>Accueil</NavLink>
                         </li>
                         <li>
                             <NavLink to={ROUTES.PARCOURS} onClick={closeMenu}>Parcours</NavLink>

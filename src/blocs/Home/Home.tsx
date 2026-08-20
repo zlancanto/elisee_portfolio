@@ -51,7 +51,7 @@ const Home: FunctionComponent = () => {
                     <div className="col-lg-6 order-1 order-lg-2">
                         <div className="hero-image" data-aos="zoom-in" data-aos-delay="300">
                             <div className="image-wrapper">
-                                <img src="/assets/img/profile/mihan-bras-croises.jpg"
+                                <img src="/assets/img/profile/mihan-poches-without-background.png"
                                      alt="Elisée MIHAN"
                                      className="img-fluid"
                                 />
